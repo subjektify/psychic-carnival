@@ -1,0 +1,12 @@
+{
+  "name": "psychic-carnival",
+  "version": "0.0.1",
+  "description": "A test playground for subjektify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["test", "playground", "subjektify"],
+  "author": "atmohamedamer",
+  "license": "MIT"
+}
