@@ -2,10 +2,13 @@
   "name": "psychic-carnival",
   "version": "0.0.1",
   "description": "A test playground for subjektify",
+  "author": "atmohamedamer",
+  "license": "MIT",
   "main": "dist/index",
   "scripts": {
     "build": "subjektify build",
     "clean": "subjektify clean",
+    "codegen": "subjektify codegen",
     "compile": "subjektify compile",
     "deploy": "subjektify deploy",
     "test": "subjektify test"
@@ -15,9 +18,8 @@
     "playground",
     "subjektify"
   ],
-  "author": "atmohamedamer",
-  "license": "MIT",
   "devDependencies": {
-    "subjektify": "^0.0.5"
+    "subjektify": "../subjektify",
+    "typescript": "^5.4.5"
   }
 }

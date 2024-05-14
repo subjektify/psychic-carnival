@@ -1,0 +1,8 @@
+metadata foo = "bar"
+
+string myString
+
+contract Lock {
+    unlockTime: uint
+    owner: address
+}
