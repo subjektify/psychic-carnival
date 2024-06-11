@@ -19,7 +19,7 @@
     "subjektify"
   ],
   "devDependencies": {
-    "subjektify": "../subjektify",
+    "subjektify": "^0.0.23",
     "typescript": "^5.4.5"
   }
 }
