@@ -19,7 +19,7 @@
     "subjektify"
   ],
   "devDependencies": {
-    "@subjektifylabs/subjektify-toolbox": "0.0.3",
+    "@subjektifylabs/subjektify-toolbox": "0.0.4",
     "subjektify": "^0.0.24",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
