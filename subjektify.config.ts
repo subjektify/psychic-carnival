@@ -1,4 +1,4 @@
-import { SubjektifyConfig } from "subjektify";
+import { SubjektifyConfig, task } from "subjektify";
 import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
@@ -12,5 +12,9 @@ const config: SubjektifyConfig = {
         outputDirectory: "generated"
     }
 }
+
+task("build", async (_, sre) => {
+    console.log(JSON.stringify(sre.model))
+});
 
 export default config;
