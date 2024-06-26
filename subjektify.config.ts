@@ -1,4 +1,5 @@
 import { SubjektifyConfig, task } from "subjektify";
+import "@subjektifylabs/subjektify-hardhat";
 import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
