@@ -11,7 +11,13 @@ const config: SubjektifyConfig = {
             "subjects",
         ],
         outputDirectory: "generated"
-    }
+    },
+    codegen: [
+        {
+            target: "contract",
+            language: "solidity"
+        }
+    ]
 }
 
 task("build", async (_, sre) => {
