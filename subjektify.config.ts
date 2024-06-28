@@ -1,4 +1,4 @@
-import { SubjektifyConfig, task } from "subjektify";
+import { SubjektifyConfig } from "subjektify";
 import "@subjektifylabs/subjektify-hardhat";
 import "@subjektifylabs/subjektify-toolbox";
 
@@ -14,14 +14,10 @@ const config: SubjektifyConfig = {
     },
     codegen: [
         {
-            target: "contract",
-            language: "solidity"
+            target: "client",
+            language: "typescript",
         }
     ]
 }
-
-task("build", async (_, sre) => {
-    console.log(JSON.stringify(sre.model))
-});
 
 export default config;
