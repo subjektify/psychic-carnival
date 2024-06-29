@@ -2,7 +2,4 @@ metadata foo = "bar"
 
 string myString
 
-subject MySubject {
-    states: [MyState]
-    behaviors: [MyBehaviors]
-}
+list MyList
