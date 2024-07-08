@@ -1,3 +1,21 @@
 {
-  "metadata": {}
+  "metadata": {
+    "foo": "bar"
+  },
+  "shapes": {
+    "psychic-carnival#myString": {
+      "type": "string",
+      "traits": {}
+    },
+    "psychic-carnival#MyList": {
+      "type": "list",
+      "member": {
+        "target": {
+          "namespace": "subjekt",
+          "identifier": "string"
+        }
+      },
+      "traits": {}
+    }
+  }
 }

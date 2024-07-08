@@ -2,4 +2,6 @@ metadata foo = "bar"
 
 string myString
 
-list MyList
+list MyList {
+    member: string
+}
