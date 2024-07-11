@@ -1,7 +1,3 @@
 metadata foo = "bar"
 
 string myString
-
-list MyList {
-    member: string
-}
