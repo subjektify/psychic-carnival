@@ -1,5 +1,4 @@
 import { SubjektifyConfig } from "subjektify";
-import "@subjektifylabs/subjektify-hardhat";
 import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
@@ -14,8 +13,8 @@ const config: SubjektifyConfig = {
     },
     codegen: [
         {
-            target: "client",
-            language: "typescript",
+            target: "contract",
+            language: "solidity",
         }
     ]
 }

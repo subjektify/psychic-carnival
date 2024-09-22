@@ -19,9 +19,8 @@
     "subjektify"
   ],
   "devDependencies": {
-    "@subjektifylabs/subjektify-hardhat": "^0.0.2",
-    "@subjektifylabs/subjektify-toolbox": "^0.0.24",
-    "subjektify": "^0.0.36",
+    "@subjektifylabs/subjektify-toolbox": "^0.0.37",
+    "subjektify": "^0.0.47",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
