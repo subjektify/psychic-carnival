@@ -13,6 +13,10 @@ const config: SubjektifyConfig = {
     },
     codegen: [
         {
+            target: "client",
+            language: "typescript",
+        },
+        {
             target: "contract",
             language: "solidity",
         }

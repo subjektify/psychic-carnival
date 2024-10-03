@@ -1,9 +1,143 @@
 {
-  "metadata": {
-    "foo": "bar"
-  },
+  "metadata": {},
   "shapes": {
-    "psychic-carnival#myString": {
+    "psychic-carnival#Player": {
+      "type": "subject",
+      "state": {
+        "name": {
+          "target": {
+            "namespace": "subjekt",
+            "identifier": "string"
+          }
+        },
+        "level": {
+          "target": {
+            "namespace": "subjekt",
+            "identifier": "uint256"
+          }
+        },
+        "experience": {
+          "target": {
+            "namespace": "subjekt",
+            "identifier": "uint256"
+          }
+        },
+        "inventory": {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "List"
+          }
+        },
+        "Item": {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "Location"
+          }
+        }
+      },
+      "behaviors": [
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "Travel"
+          }
+        },
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "CollectItem"
+          }
+        },
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "UseItem"
+          }
+        },
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "LevelUp"
+          }
+        }
+      ],
+      "events": [
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "LevelUpEvent"
+          }
+        },
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "ItemCollectedEvent"
+          }
+        }
+      ],
+      "traits": {}
+    },
+    "psychic-carnival#TimeMachine": {
+      "type": "subject",
+      "state": {
+        "owner": {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "Player"
+          }
+        },
+        "powerLevel": {
+          "target": {
+            "namespace": "subjekt",
+            "identifier": "uint256"
+          }
+        }
+      },
+      "behaviors": [
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "TravelToTime"
+          }
+        }
+      ],
+      "events": [
+        {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "TimeTravelEvent"
+          }
+        }
+      ],
+      "traits": {}
+    },
+    "psychic-carnival#Universe": {
+      "type": "subject",
+      "state": {
+        "currentEra": {
+          "target": {
+            "namespace": "subjekt",
+            "identifier": "string"
+          }
+        },
+        "players": {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "List"
+          }
+        },
+        "Player": {
+          "target": {
+            "namespace": "psychic-carnival",
+            "identifier": "Map"
+          }
+        }
+      },
+      "behaviors": [],
+      "events": [],
+      "traits": {}
+    },
+    "psychic-carnival#Item": {
       "type": "string",
       "traits": {}
     }

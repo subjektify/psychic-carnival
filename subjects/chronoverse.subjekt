@@ -1,0 +1,243 @@
+// chronoverse.subjekt
+
+// Subject: Player
+subject Player {
+    state: {
+        name: string
+        level: uint256
+        experience: uint256
+        inventory: List<Item>
+        location: Location
+    }
+    behaviors: [
+        Travel,
+        CollectItem,
+        UseItem,
+        LevelUp
+    ]
+    events: [
+        LevelUpEvent,
+        ItemCollectedEvent
+    ]
+}
+
+// Subject: TimeMachine
+subject TimeMachine {
+    state: {
+        owner: Player
+        powerLevel: uint256
+    }
+    behaviors: [
+        TravelToTime
+    ]
+    events: [
+        TimeTravelEvent
+    ]
+}
+
+// Subject: Universe
+subject Universe {
+    state: {
+        currentEra: string
+        players: List<Player>
+        items: Map<string, Item>
+    }
+    behaviors: [
+        AddPlayer,
+        RemovePlayer,
+        SpawnItem
+    ]
+    events: [
+        PlayerJoinedEvent,
+        PlayerLeftEvent,
+        ItemSpawnedEvent
+    ]
+}
+
+// Structure: Item
+structure Item {
+    members: {
+        id: string
+        name: string
+        description: string
+        effect: string
+    }
+}
+
+// Structure: Location
+structure Location {
+    members: {
+        x: int256
+        y: int256
+        era: string
+    }
+}
+
+// Behavior: Travel
+behavior Travel {
+    input: {
+        destination: Location
+    }
+    effect: {
+        // Update player's location to the destination
+        // Example logic:
+        // self.location = destination
+    }
+    emits: [TravelEvent]
+}
+
+// Behavior: CollectItem
+behavior CollectItem {
+    input: {
+        itemId: string
+    }
+    effect: {
+        // Add item to player's inventory
+        // Example logic:
+        // let item = Universe.getItem(itemId)
+        // self.inventory.append(item)
+        // Universe.removeItem(itemId)
+    }
+    emits: [ItemCollectedEvent]
+}
+
+// Behavior: UseItem
+behavior UseItem {
+    input: {
+        itemId: string
+    }
+    effect: {
+        // Apply item's effect to player
+        // Remove item from inventory after use
+        // Example logic:
+        // let item = self.inventory.getItem(itemId)
+        // applyEffect(item.effect)
+        // self.inventory.remove(itemId)
+    }
+}
+
+// Behavior: LevelUp
+behavior LevelUp {
+    effect: {
+        // Increase player's level and reset experience
+        // Example logic:
+        // self.level += 1
+        // self.experience = 0
+    }
+    emits: [LevelUpEvent]
+}
+
+// Behavior: TravelToTime
+behavior TravelToTime {
+    input: {
+        era: string
+    }
+    precondition: {
+        // Check if TimeMachine has enough power
+        // Example logic:
+        // require(self.powerLevel >= requiredPower)
+    }
+    effect: {
+        // Change player's location era
+        // Example logic:
+        // owner.location.era = era
+        // self.powerLevel -= requiredPower
+    }
+    emits: [TimeTravelEvent]
+}
+
+// Behavior: AddPlayer
+behavior AddPlayer {
+    input: {
+        player: Player
+    }
+    effect: {
+        // Add player to universe's player list
+        // Example logic:
+        // self.players.append(player)
+    }
+    emits: [PlayerJoinedEvent]
+}
+
+// Behavior: RemovePlayer
+behavior RemovePlayer {
+    input: {
+        playerId: string
+    }
+    effect: {
+        // Remove player from universe's player list
+        // Example logic:
+        // self.players.remove(playerId)
+    }
+    emits: [PlayerLeftEvent]
+}
+
+// Behavior: SpawnItem
+behavior SpawnItem {
+    input: {
+        item: Item
+        location: Location
+    }
+    effect: {
+        // Add item to universe's items at a specific location
+        // Example logic:
+        // self.items[item.id] = item
+    }
+    emits: [ItemSpawnedEvent]
+}
+
+// Event: LevelUpEvent
+event LevelUpEvent {
+    members: {
+        playerId: string
+        newLevel: uint256
+    }
+}
+
+// Event: ItemCollectedEvent
+event ItemCollectedEvent {
+    members: {
+        playerId: string
+        itemId: string
+    }
+}
+
+// Event: TimeTravelEvent
+event TimeTravelEvent {
+    members: {
+        playerId: string
+        fromEra: string
+        toEra: string
+    }
+}
+
+// Event: TravelEvent
+event TravelEvent {
+    members: {
+        playerId: string
+        fromLocation: Location
+        toLocation: Location
+    }
+}
+
+// Event: PlayerJoinedEvent
+event PlayerJoinedEvent {
+    members: {
+        playerId: string
+    }
+}
+
+// Event: PlayerLeftEvent
+event PlayerLeftEvent {
+    members: {
+        playerId: string
+    }
+}
+
+// Event: ItemSpawnedEvent
+event ItemSpawnedEvent {
+    members: {
+        itemId: string
+        location: Location
+    }
+}
